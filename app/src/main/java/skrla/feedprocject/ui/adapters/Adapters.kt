@@ -1,6 +1,8 @@
 package skrla.feedprocject.ui.adapters
 
+import android.net.Uri
 import android.widget.ImageView
+import android.widget.VideoView
 import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
@@ -19,4 +21,15 @@ fun bindProfilePic(imgView: ImageView, profilePic: String?) {
 fun bindRecyclerView(recyclerView: RecyclerView, data: List<FeedApiData>?) {
     val adapter = recyclerView.adapter as FeedAdapter
     adapter.submitList(data)
+}
+
+@BindingAdapter("videoUrl")
+fun bindVideoUrl(videoView: VideoView, videoUrl: String?) {
+    val video = videoView
+    video.setVideoURI(Uri.parse(videoUrl))
+    if (video.isFocused) {
+        video.start()
+    } else {
+      video.pause()
+    }
 }
