@@ -1,6 +1,7 @@
 package skrla.feedprocject.viewmodels
 
 import android.app.Application
+import android.util.Log
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
@@ -19,12 +20,13 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
     val feedApiData: LiveData<List<FeedApiData>>
 
     init {
+        Log.wtf("D:", "wtf")
         feedApiData = repositoryFeed.feedRepo
     }
 
     fun getFeed() {
         viewModelScope.launch {
-            Thread.sleep(600)
+            Thread.sleep(2000)
             repositoryFeed.getFeed()
         }
     }
