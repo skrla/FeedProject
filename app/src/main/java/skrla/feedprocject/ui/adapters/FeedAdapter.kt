@@ -39,7 +39,6 @@ class FeedAdapter : ListAdapter<FeedApiData, ViewHolder>(DiffCallback) {
         RecyclerView.ViewHolder(binding.root) {
         fun bind(feed: FeedApiData) {
             binding.feed = feed
-
             binding.executePendingBindings()
         }
     }
