@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="athleteData"
+            type="skrla.feedprocject.model.data.models.AthleteApi" />
+
+        <variable
+            name="feedViewModel"
+            type="skrla.feedprocject.viewmodels.FeedViewModel" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/athlete_constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".viewmodels.FeedViewModel">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/athlete_recycler"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:athleteList="@{feedViewModel.athleteApi}"
+            app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+
+        </androidx.recyclerview.widget.RecyclerView>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>
