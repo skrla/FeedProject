@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools">
+    xmlns:app="http://schemas.android.com/apk/res-auto">
 
     <data>
 
@@ -9,13 +8,11 @@
             name="feed"
             type="skrla.feedprocject.model.data.models.FeedApiData" />
 
-        <variable
-            name="feedDataFragment"
-            type="skrla.feedprocject.ui.fragments.FeedFragment" />
 
     </data>
 
     <LinearLayout
+        android:id="@+id/feed_data_layout"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:orientation="vertical">
@@ -26,69 +23,69 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.id}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/created_at_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.createdAt.toString()}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/created_before_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.createdBefore}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/author_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.author.name}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/sport_group_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.sportGroup.name}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <VideoView
             android:id="@+id/video_view"
             android:layout_width="match_parent"
-            android:layout_height="130dp"
-            app:videoUrl="@{feed.video.videoUrl}" />
-
+            android:layout_height="400dp"
+            app:videoUrl="@{feed.video.videoUrl}"
+            android:layout_gravity="center"/>
         <TextView
             android:id="@+id/description_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.description}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/athlete_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.athlete.name}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/bookmarked_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.bookmarked}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
         <TextView
             android:id="@+id/views_txt"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@{feed.views}"
-            android:textSize="12sp" />
+            android:textSize="@dimen/mid_text_size" />
 
     </LinearLayout>
 </layout>

@@ -23,12 +23,12 @@ class TestFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentTestBinding.inflate(inflater, container, false)
 
-        feedViewModel.getFeed()
+        feedViewModel.getData()
         binding.testBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_testFragment_to_feedFragment)
+            findNavController().navigate(R.id.action_testFragment_to_athleteFragment)
         }
         return binding.root
     }

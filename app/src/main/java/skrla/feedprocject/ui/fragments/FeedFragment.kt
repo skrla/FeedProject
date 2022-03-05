@@ -22,12 +22,17 @@ class FeedFragment : Fragment() {
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
-    ): View? {
+    ): View {
         _binding = FragmentFeedBinding.inflate(inflater)
         binding.let {
             it.lifecycleOwner = this
-            it.feedFragment = feedViewModel
+            it.feedViewModel = feedViewModel
             it.feedRecyclerView.adapter = FeedAdapter()
+        }
+        binding.swipeRefreshLayout.setOnRefreshListener {
+            if (binding.swipeRefreshLayout.isRefreshing) {
+                feedViewModel.getData()
+            }
         }
 
         return binding.root
