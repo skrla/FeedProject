@@ -1,6 +1,6 @@
 package skrla.feedprocject.model.data.models
 
 data class SportGroupApi(
-    val id: Int,
+    val id: String,
     val name: String
 )
