@@ -8,9 +8,8 @@ import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
 import skrla.feedprocject.databinding.FeedDataBinding
 import skrla.feedprocject.model.data.models.FeedApiData
-import skrla.feedprocject.ui.adapters.FeedAdapter.ViewHolder
 
-class FeedAdapter : ListAdapter<FeedApiData, ViewHolder>(DiffCallback) {
+class FeedAdapter : ListAdapter<FeedApiData, FeedAdapter.FeedViewHolder>(DiffCallback) {
 
     companion object DiffCallback : DiffUtil.ItemCallback<FeedApiData>() {
         override fun areItemsTheSame(oldItem: FeedApiData, newItem: FeedApiData): Boolean {
@@ -18,28 +17,64 @@ class FeedAdapter : ListAdapter<FeedApiData, ViewHolder>(DiffCallback) {
         }
 
         override fun areContentsTheSame(oldItem: FeedApiData, newItem: FeedApiData): Boolean {
-            return oldItem.id == newItem.id
+            return areItemsTheSame(oldItem, newItem)
         }
 
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
-        return ViewHolder(
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): FeedViewHolder {
+        return FeedViewHolder(
             FeedDataBinding.inflate(LayoutInflater.from(parent.context))
+
         )
     }
 
-    override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val feedId = getItem(position)
-        holder.bind(feedId)
+    override fun onViewAttachedToWindow(holder: FeedViewHolder) {
+        holder.isOnWindow()
+        super.onViewAttachedToWindow(holder)
     }
 
+    override fun onViewDetachedFromWindow(holder: FeedViewHolder) {
+        holder.isNotOnWindow()
+        super.onViewDetachedFromWindow(holder)
+    }
 
-    class ViewHolder(private var binding: FeedDataBinding) :
+    override fun onViewRecycled(holder: FeedViewHolder) {
+        holder.isRecycled()
+        super.onViewRecycled(holder)
+    }
+
+    override fun onBindViewHolder(holder: FeedViewHolder, position: Int) {
+        val feedId = getItem(position)
+        holder.bind(feedId)
+
+    }
+
+    override fun onCurrentListChanged(
+        previousList: MutableList<FeedApiData>,
+        currentList: MutableList<FeedApiData>
+    ) {
+        super.onCurrentListChanged(previousList, currentList)
+    }
+    class FeedViewHolder(private var binding: FeedDataBinding) :
         RecyclerView.ViewHolder(binding.root) {
         fun bind(feed: FeedApiData) {
             binding.feed = feed
             binding.executePendingBindings()
         }
+        fun isOnWindow() {
+            if (binding.videoView.currentPosition == 0 ) {
+                binding.videoView.start()
+            } else {
+                binding.videoView.resume()
+            }
+        }
+        fun isNotOnWindow() {
+            binding.videoView.pause()
+        }
+        fun isRecycled() {
+            binding.videoView.stopPlayback()
+        }
+
     }
 }
