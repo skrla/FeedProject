@@ -7,29 +7,44 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
+import skrla.feedprocject.R
+import skrla.feedprocject.model.data.models.AthleteApi
 import skrla.feedprocject.model.data.models.FeedApiData
 
 @BindingAdapter("imageUrl")
 fun bindProfilePic(imgView: ImageView, profilePic: String?) {
-    profilePic?.let {
-        val profilePicUri = profilePic.toUri().buildUpon().scheme("https").build()
-        imgView.load(profilePicUri)
+    if (profilePic?.contains("https://drive.google.com") == true) {
+        var profilePicId = profilePic.removePrefix("https://drive.google.com/open?id=").removeSuffix("/view")
+        profilePicId = "drive.google.com/uc?export=view&id=$profilePicId"
+        val profilePicUri = profilePicId.toUri().buildUpon().scheme("https").build()
+        imgView.load(profilePicUri) {
+            placeholder(R.drawable.ic_launcher_background)
+            placeholder(R.drawable.ic_launcher_foreground)
+        }
+    } else {
+        val profilePicUri= profilePic!!.toUri().buildUpon().scheme("https:").build()
+        imgView.load(profilePicUri) {
+            placeholder(R.drawable.ic_launcher_background)
+            placeholder(R.drawable.ic_launcher_foreground)
+        }
     }
 }
 
+
+
 @BindingAdapter("feedList")
-fun bindRecyclerView(recyclerView: RecyclerView, data: List<FeedApiData>?) {
+fun bindFeedRecycler(recyclerView: RecyclerView, data: List<FeedApiData>?) {
     val adapter = recyclerView.adapter as FeedAdapter
+    adapter.submitList(data)
+}
+
+@BindingAdapter("athleteList")
+fun bindAthleteRecycler(recyclerView: RecyclerView, data: List<AthleteApi>?) {
+    val adapter = recyclerView.adapter as AthleteAdapter
     adapter.submitList(data)
 }
 
 @BindingAdapter("videoUrl")
 fun bindVideoUrl(videoView: VideoView, videoUrl: String?) {
-    val video = videoView
-    video.setVideoURI(Uri.parse(videoUrl))
-    if (video.isFocused) {
-        video.start()
-    } else {
-      video.pause()
-    }
+    videoView.setVideoURI(Uri.parse(videoUrl))
 }
