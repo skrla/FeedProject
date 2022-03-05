@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="athlete"
+            type="skrla.feedprocject.model.data.models.AthleteApi" />
+
+        <variable
+            name="feedViewModel"
+            type="skrla.feedprocject.viewmodels.FeedViewModel" />
+    </data>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".SingleAthleteFragment"
+        android:orientation="vertical">
+
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="@{athlete.name}"
+            tools:text="Ivan Rakitić" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:imageUrl="@{athlete.picOfPerson}"
+            tools:srcCompat="@tools:sample/avatars"/>
+
+    </LinearLayout>
+</layout>
