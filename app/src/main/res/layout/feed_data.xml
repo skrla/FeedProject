@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <layout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto">
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
 
     <data>
 
         <variable
             name="feed"
-            type="skrla.feedprocject.model.data.models.FeedApiData" />
+            type="skrla.feedproject.model.data.models.FeedApiData" />
 
 
     </data>
@@ -14,78 +15,74 @@
     <LinearLayout
         android:id="@+id/feed_data_layout"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="5dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginRight="5dp"
+        android:layout_marginBottom="10dp"
         android:orientation="vertical">
 
-
-        <TextView
-            android:id="@+id/id_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.id}"
-            android:textSize="@dimen/mid_text_size" />
-
-        <TextView
-            android:id="@+id/created_at_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.createdAt.toString()}"
-            android:textSize="@dimen/mid_text_size" />
-
-        <TextView
-            android:id="@+id/created_before_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.createdBefore}"
-            android:textSize="@dimen/mid_text_size" />
-
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/author_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.author.name}"
-            android:textSize="@dimen/mid_text_size" />
+            style="@style/Headline"
+            android:text="@{feed.author.name}" />
 
-        <TextView
-            android:id="@+id/sport_group_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.sportGroup.name}"
-            android:textSize="@dimen/mid_text_size" />
-
-        <VideoView
-            android:id="@+id/video_view"
-            android:layout_width="match_parent"
-            android:layout_height="400dp"
-            app:videoUrl="@{feed.video.videoUrl}"
-            android:layout_gravity="center"/>
-        <TextView
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/description_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.description}"
-            android:textSize="@dimen/mid_text_size" />
+            style="@style/Body2"
+            android:text="@{feed.description}" />
 
-        <TextView
-            android:id="@+id/athlete_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.athlete.name}"
-            android:textSize="@dimen/mid_text_size" />
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sport_group_txt"
+            style="@style/Body1"
+            android:text="@{feed.sportGroup.name}" />
 
-        <TextView
-            android:id="@+id/bookmarked_txt"
+        <RelativeLayout
             android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.bookmarked}"
-            android:textSize="@dimen/mid_text_size" />
+            android:layout_height="400dp"
+            android:layout_margin="@dimen/normal_margin">
 
-        <TextView
+            <VideoView
+                android:id="@+id/video_view"
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:layout_centerInParent="true"
+                android:layout_gravity="center"
+                app:videoUrl="@{feed.video.videoUrl}" />
+        </RelativeLayout>
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/athlete_txt"
+                style="@style/Body1.Relative"
+                android:text="@{feed.athlete.name}" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/sport_txt"
+                style="@style/Body2.Relative"
+                android:layout_alignParentEnd="true"
+                android:layout_toEndOf="@id/athlete_txt"
+                android:text="@{feed.athlete.sport.name}" />
+
+        </RelativeLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/club_txt"
+            style="@style/Body1"
+            android:text="@{feed.athlete.club}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:id="@+id/views_txt"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="@{feed.views}"
-            android:textSize="@dimen/mid_text_size" />
+            style="@style/Body1"
+            android:text="@{feed.views}" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/created_at_txt"
+            style="@style/Body3"
+            android:text="@{feed.createdAt.toString()}" />
 
     </LinearLayout>
 </layout>

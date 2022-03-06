@@ -7,11 +7,11 @@
 
         <variable
             name="athlete"
-            type="skrla.feedprocject.model.data.models.AthleteApi" />
+            type="skrla.feedproject.model.data.models.AthleteApi" />
 
         <variable
             name="feedViewModel"
-            type="skrla.feedprocject.viewmodels.FeedViewModel" />
+            type="skrla.feedproject.viewmodels.FeedViewModel" />
 
     </data>
 
@@ -19,6 +19,7 @@
         android:id="@+id/athlete_linear"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_margin="@dimen/normal_margin"
         android:orientation="vertical">
 
         <androidx.cardview.widget.CardView
@@ -34,9 +35,9 @@
                 <androidx.appcompat.widget.AppCompatImageView
                     android:id="@+id/athlete_img"
                     android:layout_width="100dp"
-                    android:layout_height="150dp"
-                    app:imageUrl="@{athlete.picOfPerson}"
+                    android:layout_height="120dp"
                     android:layout_gravity="center"
+                    app:imageUrl="@{athlete.picOfPerson}"
                     tools:srcCompat="@tools:sample/avatars" />
 
 
@@ -45,58 +46,106 @@
                     android:layout_height="wrap_content"
                     android:orientation="vertical">
 
-                    <TextView
-                        android:id="@+id/athlete_name"
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textAlignment="center"
-                        android:text="@{athlete.name}"
-                        android:textSize="@dimen/mid_text_size" />
+                        android:layout_height="wrap_content">
 
-                    <TextView
-                        android:id="@+id/athlete_club"
-                        android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:gravity="center"
-                        android:textAlignment="center"
-                        android:text="@{athlete.club}"
-                        android:textSize="@dimen/mid_text_size" />
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/name_txt"
+                            style="@style/Body1.Relative"
+                            android:text="@string/name" />
 
-                    <TextView
-                        android:id="@+id/athlete_country"
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/athlete_name"
+                            style="@style/Body2.Relative"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/name_txt"
+                            android:text="@{athlete.name}" />
+                    </RelativeLayout>
+
+                    <RelativeLayout
                         android:layout_width="match_parent"
-                        android:layout_height="wrap_content"
-                        android:textAlignment="center"
-                        android:gravity="center"
-                        android:text="@{athlete.country.name}"
-                        android:textSize="@dimen/mid_text_size" />
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/country_txt"
+                            style="@style/Body1.Relative"
+                            android:text="@string/country" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/athlete_country"
+                            style="@style/Body2.Relative"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/country_txt"
+                            android:text="@{athlete.country.name}" />
+
+                    </RelativeLayout>
+
+                    <RelativeLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content">
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/sport_txt"
+                            style="@style/Body1.Relative"
+                            android:text="@string/sport" />
+
+                        <androidx.appcompat.widget.AppCompatTextView
+                            android:id="@+id/athlete_sport"
+                            style="@style/Body2.Relative"
+                            android:layout_alignParentEnd="true"
+                            android:layout_toEndOf="@id/sport_txt"
+                            android:text="@{athlete.sport.name}" />
+                    </RelativeLayout>
                 </LinearLayout>
 
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
+
         <LinearLayout
             android:id="@+id/expandable_layout"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="horizontal"
+            android:orientation="vertical"
             android:visibility="gone">
 
-            <TextView
-                android:id="@+id/athlete_age"
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@{athlete.age}"
-                android:textSize="@dimen/mid_text_size"/>
+                android:layout_height="wrap_content">
 
-            <TextView
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/club_txt"
+                    style="@style/Body1.Relative"
+                    android:text="@string/club"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/athlete_club"
+                    style="@style/Body2.Relative"
+                    android:text="@{athlete.club}"
+                    android:layout_toEndOf="@id/club_txt"
+                    android:textAlignment="center"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@{athlete.isCelebrity}"
-                android:textSize="@dimen/mid_text_size"/>
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/age_txt"
+                    style="@style/Body1.Relative"
+                    android:text="@string/age"/>
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/athlete_age"
+                    style="@style/Body2.Relative"
+                    android:text="@{athlete.age}"
+                    android:layout_toEndOf="@id/age_txt"
+                    android:textAlignment="center"/>
+
+
+            </RelativeLayout>
 
         </LinearLayout>
 
