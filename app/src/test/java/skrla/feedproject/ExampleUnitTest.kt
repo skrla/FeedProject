@@ -1,4 +1,4 @@
-package skrla.feedprocject
+package skrla.feedproject
 
 import org.junit.Test
 

@@ -1,4 +1,4 @@
-package skrla.feedprocject.ui.adapters
+package skrla.feedproject.ui.adapters
 
 
 import android.view.LayoutInflater
@@ -8,8 +8,8 @@ import androidx.core.view.isVisible
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import skrla.feedprocject.databinding.AthleteDataBinding
-import skrla.feedprocject.model.data.models.AthleteApi
+import skrla.feedproject.databinding.AthleteDataBinding
+import skrla.feedproject.model.data.models.AthleteApi
 
 class AthleteAdapter : ListAdapter<AthleteApi, AthleteAdapter.AthleteViewHolder>(DiffCallback) {
 

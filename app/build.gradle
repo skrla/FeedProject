@@ -10,7 +10,7 @@ android {
     compileSdk 32
 
     defaultConfig {
-        applicationId "skrla.feedprocject"
+        applicationId "skrla.feedproject"
         minSdk 27
         targetSdk 32
         versionCode 1

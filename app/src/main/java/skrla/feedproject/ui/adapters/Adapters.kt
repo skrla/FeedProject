@@ -1,4 +1,4 @@
-package skrla.feedprocject.ui.adapters
+package skrla.feedproject.ui.adapters
 
 import android.net.Uri
 import android.widget.ImageView
@@ -7,9 +7,9 @@ import androidx.core.net.toUri
 import androidx.databinding.BindingAdapter
 import androidx.recyclerview.widget.RecyclerView
 import coil.load
-import skrla.feedprocject.R
-import skrla.feedprocject.model.data.models.AthleteApi
-import skrla.feedprocject.model.data.models.FeedApiData
+import skrla.feedproject.R
+import skrla.feedproject.model.data.models.AthleteApi
+import skrla.feedproject.model.data.models.FeedApiData
 
 @BindingAdapter("imageUrl")
 fun bindProfilePic(imgView: ImageView, profilePic: String?) {
