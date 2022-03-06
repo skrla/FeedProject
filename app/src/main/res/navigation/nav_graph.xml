@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/feedFragment"
-        android:name="skrla.feedprocject.ui.fragments.FeedFragment"
+        android:name="skrla.feedproject.ui.fragments.FeedFragment"
         android:label="fragment_feed"
         tools:layout="@layout/fragment_feed" >
         <action
@@ -16,7 +16,7 @@
     </fragment>
     <fragment
         android:id="@+id/testFragment"
-        android:name="skrla.feedprocject.ui.fragments.TestFragment"
+        android:name="skrla.feedproject.ui.fragments.TestFragment"
         android:label="fragment_test"
         tools:layout="@layout/fragment_test" >
         <action
@@ -31,12 +31,12 @@
     </fragment>
     <fragment
         android:id="@+id/athleteFragment"
-        android:name="skrla.feedprocject.ui.fragments.AthleteFragment"
+        android:name="skrla.feedproject.ui.fragments.AthleteFragment"
         android:label="fragment_athlete"
         tools:layout="@layout/fragment_athlete" />
     <fragment
         android:id="@+id/singleAthleteFragment"
-        android:name="skrla.feedprocject.ui.fragments.SingleAthleteFragment"
+        android:name="skrla.feedproject.ui.fragments.SingleAthleteFragment"
         android:label="fragment_single_athlete"
         tools:layout="@layout/fragment_single_athlete" />
 </navigation>

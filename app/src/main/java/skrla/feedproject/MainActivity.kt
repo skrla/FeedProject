@@ -1,11 +1,13 @@
-package skrla.feedprocject
+package skrla.feedproject
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
 import androidx.navigation.ui.setupActionBarWithNavController
-import skrla.feedprocject.databinding.ActivityMainBinding
+import androidx.navigation.ui.setupWithNavController
+import com.google.android.material.bottomnavigation.BottomNavigationView
+import skrla.feedproject.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
 
@@ -19,9 +21,12 @@ class MainActivity : AppCompatActivity() {
         _binding = ActivityMainBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        val bottomNavigation = findViewById<BottomNavigationView>(R.id.bottom_navigation_view)
+
         val navHostFragment = supportFragmentManager.findFragmentById(R.id.fragment) as NavHostFragment
         navController = navHostFragment.navController
 
+        bottomNavigation.setupWithNavController(navController)
         setupActionBarWithNavController(navController)
     }
 
