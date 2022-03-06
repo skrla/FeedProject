@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <style name="Headline" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/artifika</item>
+        <item name="android:padding">@dimen/normal_padding</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/mid_text_size</item>
+        <item name="android:textStyle">italic</item>
+    </style>
+
+    <style name="Body1" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/artifika</item>
+        <item name="android:padding">@dimen/normal_padding</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/mid_text_size</item>
+    </style>
+
+    <style name="Body1.Relative" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/artifika</item>
+        <item name="android:padding">@dimen/normal_padding</item>
+        <item name="android:textAlignment">textStart</item>
+        <item name="android:textSize">@dimen/mid_text_size</item>
+    </style>
+
+    <style name="Body2" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/artifika</item>
+        <item name="android:padding">@dimen/normal_padding</item>
+        <item name="android:textAlignment">center</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="Body3" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/artifika</item>
+        <item name="android:padding">@dimen/normal_padding</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/small_text_size</item>
+    </style>
+
+    <style name="Body2.Relative" parent="Widget.AppCompat.TextView">
+        <item name="android:layout_width">match_parent</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="fontFamily">@font/artifika</item>
+        <item name="android:padding">@dimen/normal_padding</item>
+        <item name="android:textAlignment">textEnd</item>
+        <item name="android:textSize">@dimen/mid_text_size</item>
+    </style>
+
+</resources>
