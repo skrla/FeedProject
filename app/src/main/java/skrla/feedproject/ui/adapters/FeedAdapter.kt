@@ -1,4 +1,4 @@
-package skrla.feedprocject.ui.adapters
+package skrla.feedproject.ui.adapters
 
 
 import android.view.LayoutInflater
@@ -6,8 +6,8 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
 import androidx.recyclerview.widget.RecyclerView
-import skrla.feedprocject.databinding.FeedDataBinding
-import skrla.feedprocject.model.data.models.FeedApiData
+import skrla.feedproject.databinding.FeedDataBinding
+import skrla.feedproject.model.data.models.FeedApiData
 
 class FeedAdapter : ListAdapter<FeedApiData, FeedAdapter.FeedViewHolder>(DiffCallback) {
 

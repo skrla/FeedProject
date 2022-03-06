@@ -1,9 +1,9 @@
-package skrla.feedprocject.model.data.api
+package skrla.feedproject.model.data.api
 
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Path
-import skrla.feedprocject.model.data.models.*
+import skrla.feedproject.model.data.models.*
 
 interface FeedApi {
 

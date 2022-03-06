@@ -1,4 +1,4 @@
-package skrla.feedprocject.ui.fragments
+package skrla.feedproject.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -6,9 +6,9 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
-import skrla.feedprocject.databinding.FragmentFeedBinding
-import skrla.feedprocject.ui.adapters.FeedAdapter
-import skrla.feedprocject.viewmodels.FeedViewModel
+import skrla.feedproject.databinding.FragmentFeedBinding
+import skrla.feedproject.ui.adapters.FeedAdapter
+import skrla.feedproject.viewmodels.FeedViewModel
 
 
 class FeedFragment : Fragment() {
@@ -32,6 +32,7 @@ class FeedFragment : Fragment() {
         binding.swipeRefreshLayout.setOnRefreshListener {
             if (binding.swipeRefreshLayout.isRefreshing) {
                 feedViewModel.getData()
+                binding.swipeRefreshLayout.isRefreshing = false
             }
         }
 

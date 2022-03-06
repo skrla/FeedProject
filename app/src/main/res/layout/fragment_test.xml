@@ -6,7 +6,7 @@
     <data>
         <variable
             name="test"
-            type="skrla.feedprocject.ui.fragments.TestFragment" />
+            type="skrla.feedproject.ui.fragments.TestFragment" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout

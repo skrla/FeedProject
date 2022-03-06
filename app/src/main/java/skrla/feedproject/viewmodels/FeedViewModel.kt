@@ -1,14 +1,14 @@
-package skrla.feedprocject.viewmodels
+package skrla.feedproject.viewmodels
 
 import android.app.Application
 import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.viewModelScope
 import kotlinx.coroutines.launch
-import skrla.feedprocject.model.data.models.AthleteApi
-import skrla.feedprocject.model.data.models.FeedApiData
-import skrla.feedprocject.repository.AthleteRepositoryImp
-import skrla.feedprocject.repository.FeedRepositoryImp
+import skrla.feedproject.model.data.models.AthleteApi
+import skrla.feedproject.model.data.models.FeedApiData
+import skrla.feedproject.repository.AthleteRepositoryImp
+import skrla.feedproject.repository.FeedRepositoryImp
 
 class FeedViewModel(application: Application) : AndroidViewModel(application) {
 

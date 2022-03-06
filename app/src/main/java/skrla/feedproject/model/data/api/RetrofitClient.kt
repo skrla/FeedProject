@@ -1,4 +1,4 @@
-package skrla.feedprocject.model.data.api
+package skrla.feedproject.model.data.api
 
 import okhttp3.OkHttpClient
 import retrofit2.Retrofit

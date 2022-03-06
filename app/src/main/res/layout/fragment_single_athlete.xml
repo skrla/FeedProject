@@ -6,11 +6,11 @@
     <data>
         <variable
             name="athlete"
-            type="skrla.feedprocject.model.data.models.AthleteApi" />
+            type="skrla.feedproject.model.data.models.AthleteApi" />
 
         <variable
             name="feedViewModel"
-            type="skrla.feedprocject.viewmodels.FeedViewModel" />
+            type="skrla.feedproject.viewmodels.FeedViewModel" />
     </data>
 
     <LinearLayout

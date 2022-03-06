@@ -1,4 +1,4 @@
-package skrla.feedprocject.repository
+package skrla.feedproject.repository
 
 import android.app.Application
 import android.widget.Toast
@@ -7,8 +7,8 @@ import androidx.lifecycle.MutableLiveData
 import retrofit2.Call
 import retrofit2.Callback
 import retrofit2.Response
-import skrla.feedprocject.model.data.api.RetrofitClient
-import skrla.feedprocject.model.data.models.SportGroupApi
+import skrla.feedproject.model.data.api.RetrofitClient
+import skrla.feedproject.model.data.models.SportGroupApi
 
 class SportGroupRepositoryImp(val application: Application) : SportGroupRepository {
 

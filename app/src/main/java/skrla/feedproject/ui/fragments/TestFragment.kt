@@ -1,4 +1,4 @@
-package skrla.feedprocject.ui.fragments
+package skrla.feedproject.ui.fragments
 
 import android.os.Bundle
 import android.view.LayoutInflater
@@ -7,9 +7,9 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
-import skrla.feedprocject.R
-import skrla.feedprocject.databinding.FragmentTestBinding
-import skrla.feedprocject.viewmodels.FeedViewModel
+import skrla.feedproject.R
+import skrla.feedproject.databinding.FragmentTestBinding
+import skrla.feedproject.viewmodels.FeedViewModel
 
 
 class TestFragment : Fragment() {

@@ -1,4 +1,4 @@
-package skrla.feedprocject.model.data.models
+package skrla.feedproject.model.data.models
 
 import java.util.*
 
