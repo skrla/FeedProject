@@ -1,4 +1,4 @@
-package skrla.feedprocject.model.data.models
+package skrla.feedproject.model.data.models
 
 import com.google.gson.annotations.SerializedName
 
@@ -10,5 +10,6 @@ data class AthleteApi(
     @SerializedName("avatar") val picOfPerson: String?,
     val club: String,
     val isCelebrity: String,
-    val country: CountryApi
+    val country: CountryApi,
+    val sport: SportApi
 )
