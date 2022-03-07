@@ -1,6 +1,7 @@
 package skrla.feedproject
 
 import android.os.Bundle
+import android.view.View
 import androidx.appcompat.app.AppCompatActivity
 import androidx.navigation.NavController
 import androidx.navigation.fragment.NavHostFragment
@@ -28,6 +29,22 @@ class MainActivity : AppCompatActivity() {
 
         bottomNavigation.setupWithNavController(navController)
         setupActionBarWithNavController(navController)
+
+        navController.addOnDestinationChangedListener{_, destination, _ ->
+            if (destination.id == R.id.singleAthleteFragment) {
+                binding.bottomNavigationView.visibility = View.GONE
+                supportActionBar?.show()
+                supportActionBar?.title = "Athlete"
+            } else if (destination.id == R.id.splashFragment || destination.id == R.id.videoFragment) {
+                binding.bottomNavigationView.visibility = View.GONE
+                supportActionBar?.hide()
+
+            } else {
+                binding.bottomNavigationView.visibility = View.VISIBLE
+                supportActionBar?.show()
+                supportActionBar?.title = "Feed"
+            }
+        }
     }
 
     override fun onSupportNavigateUp(): Boolean {
