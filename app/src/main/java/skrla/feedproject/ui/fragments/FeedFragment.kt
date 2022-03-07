@@ -44,12 +44,9 @@ class FeedFragment : Fragment() {
 
         binding.swipeRefreshLayout.setOnRefreshListener {
             if (binding.swipeRefreshLayout.isRefreshing) {
-                feedViewModel.getData()
                 binding.swipeRefreshLayout.isRefreshing = false
             }
         }
-
-
 
         return binding.root
     }

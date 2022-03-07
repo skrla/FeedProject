@@ -38,6 +38,7 @@ class FeedViewModel(application: Application) : AndroidViewModel(application) {
     fun getAthleteData(id: String) {
         viewModelScope.launch {
             repositorySingleAthlete.getSingleAthlete(id)
+            Thread.sleep(700)
         }
     }
 
