@@ -1,6 +1,8 @@
 package skrla.feedproject.ui.fragments
 
 import android.os.Bundle
+import android.os.Handler
+import android.os.Looper
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -8,15 +10,15 @@ import androidx.fragment.app.Fragment
 import androidx.fragment.app.activityViewModels
 import androidx.navigation.fragment.findNavController
 import skrla.feedproject.R
-import skrla.feedproject.databinding.FragmentTestBinding
+import skrla.feedproject.databinding.FragmentSplashBinding
 import skrla.feedproject.viewmodels.FeedViewModel
 
 
-class TestFragment : Fragment() {
+class SplashFragment : Fragment() {
 
     private val feedViewModel: FeedViewModel by activityViewModels()
 
-    private var _binding: FragmentTestBinding? = null
+    private var _binding: FragmentSplashBinding? = null
     private val binding get() = _binding!!
 
     override fun onCreateView(
@@ -24,12 +26,13 @@ class TestFragment : Fragment() {
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
-        _binding = FragmentTestBinding.inflate(inflater, container, false)
+        _binding = FragmentSplashBinding.inflate(inflater, container, false)
 
         feedViewModel.getData()
-        binding.testBtn.setOnClickListener {
-            findNavController().navigate(R.id.action_testFragment_to_athleteFragment)
-        }
+
+        Handler(Looper.getMainLooper()).postDelayed( {
+            findNavController().navigate(R.id.action_splashFragment_to_feedFragment)
+        }, 3000)
         return binding.root
     }
 
