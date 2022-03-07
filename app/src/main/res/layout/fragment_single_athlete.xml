@@ -19,17 +19,73 @@
         tools:context=".SingleAthleteFragment"
         android:orientation="vertical">
 
-        <TextView
+        <androidx.appcompat.widget.AppCompatImageView
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:layout_gravity="center"
+            app:imageUrl="@{feedViewModel.singleAthleteApi.picOfPerson}"
+            tools:srcCompat="@tools:sample/avatars"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:text="@string/name"
+            style="@style/Body2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="@{athlete.name}"
-            tools:text="Ivan Rakitić" />
+            android:text="@{feedViewModel.singleAthleteApi.name}"
+            style="@style/Body2" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:layout_width="wrap_content"
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:imageUrl="@{athlete.picOfPerson}"
-            tools:srcCompat="@tools:sample/avatars"/>
+            style="@style/Body2"
+            android:text="@string/age"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@{feedViewModel.singleAthleteApi.age}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@string/country"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@{feedViewModel.singleAthleteApi.country.name}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@string/sport"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@{feedViewModel.singleAthleteApi.sport.name}"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@string/club"/>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            style="@style/Body2"
+            android:text="@{feedViewModel.singleAthleteApi.club}"/>
+
 
     </LinearLayout>
 </layout>
