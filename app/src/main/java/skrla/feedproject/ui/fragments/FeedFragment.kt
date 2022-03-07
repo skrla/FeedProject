@@ -18,23 +18,38 @@ class FeedFragment : Fragment() {
     private var _binding: FragmentFeedBinding? = null
     private val binding get() = _binding!!
 
+
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View {
         _binding = FragmentFeedBinding.inflate(inflater)
+        val adapter = FeedAdapter()
         binding.let {
             it.lifecycleOwner = this
             it.feedViewModel = feedViewModel
-            it.feedRecyclerView.adapter = FeedAdapter()
+            it.feedRecyclerView.adapter = adapter
         }
+        adapter.setOnItemClickListener(object : FeedAdapter.OnItemClickListener{
+            override fun onItemClick(position: Int, name: String) {
+                if (name == "athleteTxt") {
+                    feedViewModel.getAthleteData(adapter.currentList.get(position).athlete.id)
+                } else if(name == "videoView") {
+                    feedViewModel.getVideoUrl(adapter.currentList.get(position).video.videoUrl)
+                }
+            }
+
+        })
+
         binding.swipeRefreshLayout.setOnRefreshListener {
             if (binding.swipeRefreshLayout.isRefreshing) {
                 feedViewModel.getData()
                 binding.swipeRefreshLayout.isRefreshing = false
             }
         }
+
+
 
         return binding.root
     }
