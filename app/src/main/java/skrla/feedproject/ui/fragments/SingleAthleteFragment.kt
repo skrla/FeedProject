@@ -23,6 +23,7 @@ class SingleAthleteFragment : Fragment() {
         _binding = FragmentSingleAthleteBinding.inflate(inflater)
         binding.let {
             it.lifecycleOwner = this
+            it.feedViewModel = feedViewModel
         }
 
 

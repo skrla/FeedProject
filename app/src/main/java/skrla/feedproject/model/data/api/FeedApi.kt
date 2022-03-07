@@ -22,4 +22,7 @@ interface FeedApi {
     @GET("sport/{id}/group")
     fun getSportGroup(@Path("id") id: String): Call<List<SportGroupApi>>
 
+    @GET("athlete/{id}")
+    fun getSingleAthlete(@Path("id") id: String) : Call<AthleteApi>
+
 }
